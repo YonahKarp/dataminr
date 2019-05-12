@@ -1,0 +1,23 @@
+
+.header{
+    background-color: dimgray;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+.post{
+    padding: 5px;
+    border-bottom: 1px solid dimgrey;
+
+    .name{
+        display: inline;
+    }
+
+    .content{
+        // display: inline-block;
+    }
+
+    .date{
+
+    }
+}

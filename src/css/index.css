@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0; }
+
+.clearfix {
+  clear: both; }
+
+.font-8 {
+  font-size: 8px; }
+
+.font-9 {
+  font-size: 9px; }
+
+.font-10 {
+  font-size: 10px; }
+
+.font-11 {
+  font-size: 11px; }
+
+.font-12 {
+  font-size: 12px; }
+
+.font-13 {
+  font-size: 13px; }
+
+.font-14 {
+  font-size: 14px; }
+
+.font-15 {
+  font-size: 15px; }
+
+.font-16 {
+  font-size: 16px; }
+
+.font-17 {
+  font-size: 17px; }
+
+.font-18 {
+  font-size: 18px; }
+
+.font-19 {
+  font-size: 19px; }
+
+.font-20 {
+  font-size: 20px; }
+
+.font-21 {
+  font-size: 21px; }
+
+.font-22 {
+  font-size: 22px; }
+
+.font-23 {
+  font-size: 23px; }
+
+.font-24 {
+  font-size: 24px; }
+
+.semibold {
+  font-size: 600; }
+
+.hide {
+  display: none; }
+
+.flex {
+  display: flex; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.centerTxt {
+  text-align: center; }
+
+.anchor {
+  position: relative;
+  top: -250px; }
+
+html, body, #root, .App {
+  height: 100%;
+  color: whitesmoke; }
+
+.flex {
+  height: 100%; }
+  .flex > div {
+    background: #444444;
+    flex: 1 1 0;
+    border-right: 3px solid black;
+    padding: 5px;
+    overflow-y: scroll; }
+
+@media only screen and (max-aspect-ratio: 1 / 1) {
+  .flex {
+    flex-direction: column; }
+    .flex > div {
+      border-bottom: 3px solid black; } }

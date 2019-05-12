@@ -1,0 +1,27 @@
+* {box-sizing:border-box}
+body{ margin: 0}
+
+.clearfix{clear: both;}
+
+$font: font;
+@for $i from 8 through 24 {
+    .#{$font}-#{$i} {
+        font-size: #{$i}px
+    }
+}
+
+.semibold{font-size: 600}
+
+.hide{display: none}
+.flex{display: flex;}
+
+.left{float: left;}
+.right{float: right;}
+
+
+.centerTxt{text-align: center;}
+
+.anchor{
+    position: relative;
+    top: -250px;
+}
