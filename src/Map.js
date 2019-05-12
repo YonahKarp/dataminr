@@ -4,7 +4,7 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 const mapStyles = {
   width: '50%',
-  height: '100%'
+  height: '95%'
 };
 
 export class MapContainer extends Component {
@@ -31,7 +31,7 @@ export class MapContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    feed: state.feed
+    feed: state.filteredFeed
 
 })
 

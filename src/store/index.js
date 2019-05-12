@@ -3,6 +3,7 @@ import {mockData} from "../mockData"
 import reducer from "../reducers";
 
 const initialState = {
-    feed: mockData
+    feed: mockData,
+    filteredFeed: mockData
 }
 export const store = createStore(reducer, initialState);

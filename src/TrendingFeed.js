@@ -4,8 +4,9 @@ import './css/Trending.css'
 
 export class TrendingFeed extends Component {
   render() {
+      console.log(this.props)
     return (
-        <div>
+        <div className="trending">
             <div className="header">Trending Messages</div>
             <div className="feed">
                 {this.props.feed.map((post, i) =>
@@ -23,7 +24,7 @@ export class TrendingFeed extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    feed: state.feed
+    feed: state.filteredFeed
 })
 
 const mapDispatchToProps = {

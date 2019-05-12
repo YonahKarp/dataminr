@@ -82,16 +82,21 @@ body {
 
 html, body, #root, .App {
   height: 100%;
-  color: whitesmoke; }
+  color: whitesmoke;
+  background: #353838; }
 
-.flex {
-  height: 100%; }
-  .flex > div {
-    background: #444444;
-    flex: 1 1 0;
-    border-right: 3px solid black;
-    padding: 5px;
-    overflow-y: scroll; }
+.flex > div {
+  border-right: 3px solid black; }
+
+.trending {
+  flex: 1 1 0;
+  overflow-y: scroll; }
+
+.rightSections {
+  flex: 2 1 0;
+  overflow: hidden; }
+  .rightSections .flex > div {
+    flex: 1 1 0; }
 
 @media only screen and (max-aspect-ratio: 1 / 1) {
   .flex {

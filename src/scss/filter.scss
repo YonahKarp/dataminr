@@ -1,0 +1,21 @@
+@import "constants";
+
+.searchBar{
+    background: $colorHeader;
+    padding: 5px;
+    
+    input{
+        min-width: 100px;;
+        text-indent: 12px;
+        margin-right: 10px;
+    }
+}
+
+.searchIcon{
+    transform: rotate(45deg);
+    margin-left: 2px;
+    margin-top: -2px;
+    position: absolute;
+    color: black;
+    pointer-events: none;
+}

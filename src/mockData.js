@@ -1,7 +1,7 @@
 function makeMockData(){
     var feed = [];
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 25; i++) {
         var post = {};
 
         post.color =  createColor();
@@ -73,10 +73,10 @@ var location = [
             lng: -111.0937
         }
     },{
-        name: "Nevada",
+        name: "Iowa",
         coords: {
-            lat: 38.8026,
-            lng: -116.4194
+            lat: 41.8780,
+            lng: -93.0977
         }
     },{
         name: "North Carolina",
@@ -85,10 +85,10 @@ var location = [
             lng: -79.0193
         }
     },{
-        name: "New Jersey",
+        name: "Kentucky",
         coords: {
-            lat: 40.0583,
-            lng: -74.4057
+            lat: 37.8393,
+            lng: -84.2700
         }
     },{
         name: "Washington",
