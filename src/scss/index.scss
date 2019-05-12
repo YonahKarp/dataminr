@@ -9,21 +9,38 @@ html, body, #root, .App{
 
 }
 
-.flex{
+.App{
     > div{
         border-right: 3px solid black;
     }
 }
 
-.trending{
+
+
+.leftSections{
+    flex-direction: column;
     flex: 1 1 0;
-    overflow-y: scroll;
+    height: 100%;
+
+    .relatedTerms{
+        padding: 5px;
+
+        .term{
+            display: inline-block;
+            background: $steelBlue;
+            padding: 0 3px;
+            border-radius: 3px;
+            border: 1.5px solid black;
+            margin: 5px;
+        }
+    }
 
 }
 
 .rightSections{
     flex: 2 1 0;
     overflow: hidden;
+    position: relative;
 
     .flex > div{
         flex: 1 1 0

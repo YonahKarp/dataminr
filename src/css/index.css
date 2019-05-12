@@ -2,7 +2,9 @@
   box-sizing: border-box; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 13px; }
 
 .clearfix {
   clear: both; }
@@ -59,7 +61,7 @@ body {
   font-size: 24px; }
 
 .semibold {
-  font-size: 600; }
+  font-weight: 600; }
 
 .hide {
   display: none; }
@@ -85,16 +87,27 @@ html, body, #root, .App {
   color: whitesmoke;
   background: #353838; }
 
-.flex > div {
+.App > div {
   border-right: 3px solid black; }
 
-.trending {
+.leftSections {
+  flex-direction: column;
   flex: 1 1 0;
-  overflow-y: scroll; }
+  height: 100%; }
+  .leftSections .relatedTerms {
+    padding: 5px; }
+    .leftSections .relatedTerms .term {
+      display: inline-block;
+      background: #444D55;
+      padding: 0 3px;
+      border-radius: 3px;
+      border: 1.5px solid black;
+      margin: 5px; }
 
 .rightSections {
   flex: 2 1 0;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
   .rightSections .flex > div {
     flex: 1 1 0; }
 

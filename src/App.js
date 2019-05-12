@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import TrendingFeed from './TrendingFeed'
 import Map from './Map'
 import Filter from './Filter';
+import RelatedTerms from './RelatedTerms';
+import Alerts from './Alerts';
 
 
 export class App extends Component {
@@ -12,11 +14,15 @@ export class App extends Component {
   render() {
     return (
       <div className="App flex">
-        <TrendingFeed/>
+        <div className="leftSections flex">
+          <RelatedTerms/>
+          <TrendingFeed/>
+
+        </div>
         <div className="rightSections">
           <Filter/>
           <div className="flex">
-            <div>Hello world</div>
+            <Alerts/>
             <Map/>
           </div>
         </div>

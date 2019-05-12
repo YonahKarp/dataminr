@@ -5,11 +5,14 @@
     min-width: 100px;
     text-indent: 12px;
     margin-right: 10px; }
+  .searchBar .searchIcon {
+    margin-left: 2px;
+    margin-top: -2px;
+    position: absolute;
+    color: black; }
 
 .searchIcon {
-  transform: rotate(45deg);
-  margin-left: 2px;
-  margin-top: -2px;
-  position: absolute;
-  color: black;
+  transform: rotate(-45deg);
+  display: inline-block;
+  margin-right: 5px;
   pointer-events: none; }

@@ -6,11 +6,6 @@ import {setFilter} from './actions'
 
 export class Filter extends Component {
 
-    onInputChange(e){
-        console.log(e.currentTarget.value)
-    }
-
-
     render() {
         return (
             <div className="searchBar">
@@ -35,7 +30,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => {
     return {
         onInputChange: (ev) => {
-         console.log(ev.currentTarget.value)
           dispatch(setFilter((e) => e.content.toLowerCase().includes(ev.currentTarget.value.toLowerCase())))
         }
     }

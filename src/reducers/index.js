@@ -1,6 +1,5 @@
-import {mockData} from "../mockData";
 
-import {SET_ACTIVE_INDEX, SET_FILTER, setActiveIndex, setFilter} from "../actions";
+import {SET_ACTIVE_INDEX, SET_FILTER} from "../actions";
 
 
 function reducer(state, action) {
@@ -13,6 +12,7 @@ function reducer(state, action) {
         case  SET_FILTER:
             return {
                 ...state,
+                activeIndex: undefined,
                 filteredFeed: state.feed.filter(action.payload.filter)
             }
             

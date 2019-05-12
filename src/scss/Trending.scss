@@ -1,17 +1,40 @@
 
+@import 'constants';
+
+.trending, .alerts{
+    flex-direction: column;
+    height: 100%;;
+    
+}
+
+.alerts img{
+    max-width: 50%;
+    margin-left: 10px;
+    max-height: 100px;
+}
+
 .header{
     background-color: dimgray;
     text-transform: uppercase;
     padding: 5px;
 }
 
+.feed{
+    overflow-y: scroll;
+    height: 100%;
+}
+
 .post{
     padding: 5px;
     border-bottom: 1px solid dimgrey;
+    overflow: hidden;
 
-    .name{
-        display: inline;
+    &.active{
+        background: $colorHeader;
     }
+
+    .name{color: gray;}
+    .type{color:$navy}
 
     .content{
         // display: inline-block;
