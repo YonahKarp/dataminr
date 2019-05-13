@@ -26,14 +26,14 @@ function reducer(state, action) {
             return {
                 ...state,
                 activeIndex: undefined,
-                filteredFeed: state.feed.filter(action.payload.filter)
+                searchTerm: action.payload.searchTerm,
+                filteredFeed: state.feed.filter(action.payload.filter),
+                filteredAlerts: state.alerts.filter(action.payload.filter)
             }
             
         default:
             return state;
     } 
-
-    
 }
 
 export default reducer;

@@ -25,4 +25,4 @@ app.get('/alerts',function(req,res){
 });
 
 
-var server=app.listen(3001,function() {});
+app.listen(process.env.PORT || 5000,function() {});

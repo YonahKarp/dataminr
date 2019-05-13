@@ -29,16 +29,12 @@ export class RelatedTerms extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-
-})
-
 const mapDispatchToProps = (dispatch) => {
     return {
         onTermClick: (ev) => {
-          dispatch(setFilter((e) => e.content.toLowerCase().includes(ev.currentTarget.dataset.term.toLowerCase())))
+          dispatch(setFilter(ev.currentTarget.dataset.term))
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RelatedTerms)
+export default connect(null, mapDispatchToProps)(RelatedTerms)

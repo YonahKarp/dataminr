@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 
 import { connect } from 'react-redux'
 import './css/Trending.css'
 
-import { setActiveIndex } from './actions'
+// import { setActiveIndex } from './actions'
 
 export class TrendingFeed extends Component {
     render() {
@@ -13,12 +13,9 @@ export class TrendingFeed extends Component {
                 <div className="header">Alerts</div>
                 <div className="feed">
                     {this.props.feed.map((post, i) =>
-                        <div className={"post" 
-                            // + (i === this.props.activeIndex ? " active" : "")
-                            }
+                        <div className="post"
                             key={"post" + i}
                             id={"post" + i}
-                            onClick={() => this.props.onPostClick(i)}
                             >
                             <div className="type semibold left">{post.type}</div>
 
@@ -26,23 +23,20 @@ export class TrendingFeed extends Component {
                             <div className="clearfix"></div>
 
                             {post.image &&
-                                <img className="right" src={post.image}/>
+                                <img alt="news img" className="right" src={post.image}/>
                             }
                             <span className="name">{post.name}:</span> 
                             <span className="content">{post.content}</span>
                         </div>
                     )}
+
+                    {!this.props.feed.length && 
+                        <div className="emptyMessage">No alerts found</div>
+                    }
                 </div>
             </div>
         )
     }
-
-    // componentDidUpdate() {
-    //     if(this.props.activeIndex){
-    //         var root = ReactDOM.findDOMNode(this)
-    //         root.querySelector("#post"+this.props.activeIndex).scrollIntoViewIfNeeded();
-    //     }
-    // }
 }
 
 const mapStateToProps = (state) => ({
@@ -50,12 +44,4 @@ const mapStateToProps = (state) => ({
     activeIndex: state.activeIndex
 })
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onPostClick: (i) => {
-            // dispatch(setActiveIndex(i))
-        }
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(TrendingFeed)
+export default connect(mapStateToProps, null)(TrendingFeed)

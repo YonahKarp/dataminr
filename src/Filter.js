@@ -12,7 +12,7 @@ export class Filter extends Component {
                 <span className="searchIcon">
                     &#9906;
                 </span>
-                <input onChange={this.props.onInputChange}/>
+                <input value={this.props.searchTerm} onChange={this.props.onInputChange}/>
 
                 <span className="brandName">
                     Dataminr
@@ -24,13 +24,13 @@ export class Filter extends Component {
 }
 
 const mapStateToProps = (state) => ({
-
+    searchTerm: state.searchTerm
 })
 
 const mapDispatchToProps = (dispatch) => {
     return {
         onInputChange: (ev) => {
-          dispatch(setFilter((e) => e.content.toLowerCase().includes(ev.currentTarget.value.toLowerCase())))
+          dispatch(setFilter(ev.currentTarget.value))
         }
     }
 }

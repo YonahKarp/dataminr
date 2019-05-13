@@ -25,9 +25,12 @@ export function setActiveIndex(i) {
     }
 }
 
-export function setFilter(filter) {
+export function setFilter(searchTerm) {
   return { 
       type: SET_FILTER, 
-      payload: {filter: filter}
+      payload: {
+        searchTerm: searchTerm,
+        filter: (e) => e.content.toLowerCase().includes(searchTerm.toLowerCase())
+      }
     }
 }

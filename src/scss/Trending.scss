@@ -7,6 +7,10 @@
     
 }
 
+.trending .post{
+    cursor: pointer;
+}
+
 .alerts img{
     max-width: 50%;
     margin-left: 10px;
@@ -35,12 +39,9 @@
 
     .name{color: gray;}
     .type{color:$navy}
+}
 
-    .content{
-        // display: inline-block;
-    }
-
-    .date{
-
-    }
+.emptyMessage{
+    text-align: center;
+    margin-top: 15px;
 }

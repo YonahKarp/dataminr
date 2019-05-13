@@ -5,7 +5,7 @@ const initialState = {
     feed: [],
     filteredFeed: [],
     alerts: [],
-    filteredAlerts: []
-
+    filteredAlerts: [],
+    searchTerm: ""
 }
 export const store = createStore(reducer, initialState);

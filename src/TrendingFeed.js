@@ -27,6 +27,10 @@ export class TrendingFeed extends Component {
                             <span className="content">{post.content}</span>
                         </div>
                     )}
+
+                    {!this.props.feed.length && 
+                        <div className="emptyMessage">No posts found</div>
+                    }
                 </div>
             </div>
         )

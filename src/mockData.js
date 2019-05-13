@@ -5,7 +5,6 @@ function makeMockData(){
     }
 }
 
-
 function createFeed(){
     var feed = [];
 
@@ -174,7 +173,6 @@ function createAlerts(){
     });
     
     return alerts
-
 }
 
 function rand(min, max) {
