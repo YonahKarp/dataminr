@@ -1,11 +1,11 @@
 import { createStore } from "redux";
-import {mockData} from "../mockData"
 import reducer from "../reducers";
 
 const initialState = {
-    ...mockData,
-    filteredFeed: mockData.feed,
-    filteredAlerts: mockData.alerts
+    feed: [],
+    filteredFeed: [],
+    alerts: [],
+    filteredAlerts: []
 
 }
 export const store = createStore(reducer, initialState);

@@ -20,7 +20,7 @@ export class TrendingFeed extends Component {
                             >
                             <div className="type semibold left">{post.type}</div>
 
-                            <div className="date right">{post.time.toLocaleTimeString()}</div>
+                            <div className="date right">{new Date(post.time).toLocaleTimeString()}</div>
                             <div className="clearfix"></div>
 
                             <span className="name">{post.name}:</span>
