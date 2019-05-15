@@ -1,30 +1,27 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 
+import Post from './Post';
+
 import { connect } from 'react-redux'
 import './css/Trending.css'
 
-import { setActiveIndex } from './actions'
+import { setActiveFeedIndex, setActiveAlertIndex } from './actions'
 
-export class TrendingFeed extends Component {
+export class PostList extends Component {
     render() {
         return (
-            <div className="trending flex">
-                <div className="header">Trending Messages</div>
+            <div className={"flex " + this.props.type}>
+                <div className="header">{this.props.headerTxt}</div>
                 <div className="feed">
                     {this.props.feed.map((post, i) =>
-                        <div className={"post" + (i === this.props.activeIndex ? " active" : "")}
-                            key={"post" + i}
-                            id={"post" + i}
-                            onClick={() => this.props.onPostClick(i)}
-                            >
-                            <div className="type semibold left">{post.type}</div>
-
-                            <div className="date right">{new Date(post.time).toLocaleTimeString()}</div>
-                            <div className="clearfix"></div>
-
-                            <span className="name">{post.name}:</span>
-                            <span className="content">{post.content}</span>
+                        <div onClick={() => this.props.onPostClick(i)}
+                             key={"post" + i}
+                             id={"post" + i}
+                        >
+                            <Post post={post}
+                                  active={i === this.props.activeIndex}
+                            />
                         </div>
                     )}
 
@@ -55,13 +52,20 @@ export class TrendingFeed extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    feed: state.filteredFeed,
-    activeIndex: state.activeIndex,
-    hasSearchTerm: !!state.searchTerm
-})
+const mapStateToProps = function(state, ownProps){
+    return{
+        type: ownProps.type,
+        headerTxt: ownProps.header,
+        feed: ownProps.type === "trending" ? state.filteredFeed : state.filteredAlerts,
+        activeIndex: ownProps.type === "trending" ? state.activeFeedIndex : state.activeAlertIndex,
+        hasSearchTerm: !!state.searchTerm
+    }
+}
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
+    var setActiveIndex = ownProps.type === "trending" ?
+                setActiveFeedIndex : setActiveAlertIndex;
+
     return {
         onPostClick: (i) => {
             dispatch(setActiveIndex(i))
@@ -69,4 +73,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TrendingFeed)
+export default connect(mapStateToProps, mapDispatchToProps)(PostList)

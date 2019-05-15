@@ -151,7 +151,7 @@ function createAlerts(){
         type: "CTR",
         time: new Date(today - 3*msPerDay),
         name: "@Reuters",
-        location: location[2],
+        location: location[3],
         content: "Iran commander calls U.S. military in Gulf a target not a threat: ISNA" + lorem.split(" ").slice(0,rand(10,36)).join(" ")
     });
 
@@ -168,7 +168,7 @@ function createAlerts(){
         type: "MKT",
         time: new Date(today - 5*msPerDay),
         name: "@Reuters",
-        location: location[2],
+        location: location[5],
         content: "Graduation gifts: Why stocks are better than straight cash" + lorem.split(" ").slice(0,rand(10,36)).join(" ")
     });
     

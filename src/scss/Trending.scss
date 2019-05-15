@@ -7,10 +7,6 @@
     
 }
 
-.trending .post{
-    cursor: pointer;
-}
-
 .alerts img{
     max-width: 50%;
     margin-left: 10px;
@@ -29,6 +25,7 @@
 }
 
 .post{
+    cursor: pointer;
     padding: 5px;
     border-bottom: 1px solid dimgrey;
     overflow: hidden;

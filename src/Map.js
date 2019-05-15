@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
-import { setActiveIndex } from './actions'
+import { setActiveFeedIndex } from './actions'
 
 const mapStyles = {
 	width: '50%',
@@ -27,25 +27,23 @@ export class MapContainer extends Component {
 			<Map
 				className="map"
 				google={this.props.google}
-				zoom={this.props.activeIndex ? 5 : 3}
+				zoom={this.props.mapCenter ? 5 : 3}
 				style={mapStyles}
 				initialCenter={this.state.initialCenter}
 				center={
-					this.props.activeIndex ?
-						this.props.feed[this.props.activeIndex].location.coords :
-						this.state.initialCenter
+					this.props.mapCenter || this.state.initialCenter
 				}
 			>
 				{this.props.feed.map((post, i) =>
 					<Marker key={"marker" + i}
-						onClick={() => this.props.onMarkerClick(i)}
+						onClick={() => this.props.onFeedMarkerClick(i)}
 						position={post.location.coords}
 					/>
 				)}
 
 				{this.props.alerts.map((post, i) =>
 					<Marker key={"marker" + i}
-						onClick={() => this.props.onMarkerClick(i)}
+						onClick={() => this.props.onAlertMarkerClick(i)}
 						position={post.location.coords}
 						icon={{
 							url: "http://www.myiconfinder.com/uploads/iconsets/256-256-369f997cef4f440c5394ed2ae6f8eecd.png",
@@ -61,13 +59,16 @@ export class MapContainer extends Component {
 const mapStateToProps = (state) => ({
 	feed: state.filteredFeed,
 	alerts: state.filteredAlerts,
-	activeIndex: state.activeIndex
+	mapCenter: state.mapCenter
 })
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onMarkerClick: (i) => {
-			dispatch(setActiveIndex(i))
+		onFeedMarkerClick: (i) => {
+			dispatch(setActiveFeedIndex(i))
+		},
+		onAlertMarkerClick: (i) => {
+			dispatch(setActiveFeedIndex(i))
 		}
 	}
 }

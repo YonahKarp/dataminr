@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import './css/App.css';
 import { connect } from 'react-redux'
 
-import TrendingFeed from './TrendingFeed'
 import Map from './Map'
 import Filter from './Filter';
 import RelatedTerms from './RelatedTerms';
-import Alerts from './Alerts';
 
 import { mockData } from './mockData'
 import { setFeed, setAlerts } from './actions'
+import PostList  from './PostList';
 
 
 var API = "https://dataminr-server.herokuapp.com/",
@@ -44,12 +43,12 @@ export class App extends Component {
 			<div className="App flex">
 				<div className="leftSections flex">
 					<RelatedTerms />
-					<TrendingFeed />
+					<PostList type="trending" header="Trending Messages"/>
 				</div>
 				<div className="rightSections">
 					<Filter />
 					<div className="flex">
-						<Alerts />
+						<PostList type="alerts" header="Alerts"/>
 						<Map/>
 					</div>
 				</div>
