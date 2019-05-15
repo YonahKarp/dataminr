@@ -45,7 +45,6 @@ export class App extends Component {
 				<div className="leftSections flex">
 					<RelatedTerms />
 					<TrendingFeed />
-
 				</div>
 				<div className="rightSections">
 					<Filter />

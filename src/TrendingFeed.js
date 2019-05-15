@@ -28,8 +28,19 @@ export class TrendingFeed extends Component {
                         </div>
                     )}
 
-                    {!this.props.feed.length && 
+                    {!this.props.feed.length && this.props.hasSearchTerm && 
                         <div className="emptyMessage">No posts found</div>
+                    }
+
+                    {!this.props.feed.length && !this.props.hasSearchTerm && 
+                        <div className="loader">
+                            <div>Loading</div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     }
                 </div>
             </div>
@@ -46,7 +57,8 @@ export class TrendingFeed extends Component {
 
 const mapStateToProps = (state) => ({
     feed: state.filteredFeed,
-    activeIndex: state.activeIndex
+    activeIndex: state.activeIndex,
+    hasSearchTerm: !!state.searchTerm
 })
 
 const mapDispatchToProps = (dispatch) => {
