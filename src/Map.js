@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
-import { setActiveFeedIndex } from './actions'
+import { setActiveFeedIndex, setActiveAlertIndex } from './actions'
 
 const mapStyles = {
 	width: '50%',
@@ -68,7 +68,7 @@ const mapDispatchToProps = (dispatch) => {
 			dispatch(setActiveFeedIndex(i))
 		},
 		onAlertMarkerClick: (i) => {
-			dispatch(setActiveFeedIndex(i))
+			dispatch(setActiveAlertIndex(i))
 		}
 	}
 }
