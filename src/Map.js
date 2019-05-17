@@ -35,10 +35,14 @@ export class MapContainer extends Component {
 				}
 			>
 				{this.props.feed.map((post, i) =>
-					<Marker key={"marker" + i}
-						onClick={() => this.props.onFeedMarkerClick(i)}
-						position={post.location.coords}
-					/>
+						<Marker key={"marker" + i}
+							onClick={() => this.props.onFeedMarkerClick(i)}
+							position={post.location.coords}
+							icon={{
+								url: (i === this.props.activeFeedIndex ?
+											"/pinBlue.png" : "/pin.png")
+							}}
+						/>
 				)}
 
 				{this.props.alerts.map((post, i) =>
@@ -47,7 +51,7 @@ export class MapContainer extends Component {
 						position={post.location.coords}
 						icon={{
 							url: "http://www.myiconfinder.com/uploads/iconsets/256-256-369f997cef4f440c5394ed2ae6f8eecd.png",
-							scaledSize: new google.maps.Size(48, 48)
+							scaledSize: new google.maps.Size(36, 44)
 						}}
 					/>
 				)}
@@ -56,10 +60,13 @@ export class MapContainer extends Component {
 	}
 }
 
+
 const mapStateToProps = (state) => ({
 	feed: state.filteredFeed,
 	alerts: state.filteredAlerts,
-	mapCenter: state.mapCenter
+	mapCenter: state.mapCenter,
+	activeAlertIndex: state.activeAlertIndex,
+	activeFeedIndex: state.activeFeedIndex
 })
 
 const mapDispatchToProps = (dispatch) => {

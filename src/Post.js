@@ -17,7 +17,7 @@ export class Post extends Component {
 
 				<span className="name">{this.props.post.name}:</span>
 				<span className="content">{this.props.post.content}</span>
-				<div class="clearfix"></div>
+				<div className="clearfix"></div>
 			</div>
 		)
 	}
