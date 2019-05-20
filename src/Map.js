@@ -40,7 +40,7 @@ export class MapContainer extends Component {
 							position={post.location.coords}
 							icon={{
 								url: (i === this.props.activeFeedIndex ?
-											"/pinBlue.png" : "/pin.png")
+											"dataminr/pinBlue.png" : "dataminr/pin.png")
 							}}
 						/>
 				)}
