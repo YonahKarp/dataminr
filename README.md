@@ -1,4 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Dataminr mockup
 
-## Available Scripts
-An app to showcase react/redux and node/express backend (mock data)
+A small mockup of the dataminr web application, written in React/Redux with a small Node/Express backend
